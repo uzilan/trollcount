@@ -1,5 +1,7 @@
 package se.diversify.trollcount
 
+import TrollNumber._
+
 /*Exception that should be thrown if the user uses TrollNumbers that are bigger then what a troll can grasp */
 class TrollsDontDoBigNumbersException extends Exception
 
@@ -12,13 +14,7 @@ class TrollsDontDoBigNumbersException extends Exception
  * @param value the numeric value of this [[se.diversify.trollcount.TrollNumber]]
  */
 class TrollNumber private[trollcount](val value: Int) {
-  override def toString: String = value match {
-    case 1 => "One"
-    case 2 => "Two"
-    case 3 => "Three"
-    case 4 => "Many"
-    case 16 => "Lots"
-  }
+  override def toString: String = "" // TODO return correct representation
 
   /**Allows joining [[se.diversify.trollcount.TrollNumber]]s together, for example:
    * {{{
@@ -28,7 +24,7 @@ class TrollNumber private[trollcount](val value: Int) {
    * @param other the other [[se.diversify.trollcount.TrollNumber]] to join with this one
    * @return a new [[se.diversify.trollcount.TrollNumber]] with this one combined with the other
    */
-  def -(other: TrollNumber): TrollNumber = this + other
+  def -(other: TrollNumber): TrollNumber = One // TODO return something like Many-One etc
 
   /**Allows adding one [[se.diversify.trollcount.TrollNumber]] to another, for example:
    * {{{
@@ -38,7 +34,7 @@ class TrollNumber private[trollcount](val value: Int) {
    * @param other the other [[se.diversify.trollcount.TrollNumber]] to add to this one
    * @return a new [[se.diversify.trollcount.TrollNumber]] with this one added to the other
    */
-  def +(other: TrollNumber): TrollNumber = TrollNumber(this.value + other.value)
+  def +(other: TrollNumber): TrollNumber = One // TODO return new TrollNumber with both numbers added
 
 }
 
@@ -58,23 +54,12 @@ object TrollNumber {
    * @param tn the [[se.diversify.trollcount.TrollNumber]] to convert
    * @return the [[se.diversify.trollcount.TrollNumber]] value as an [[scala.Int]]
    */
-  implicit def TrollNumber2Int(tn: TrollNumber): Int = tn.value
+  implicit def TrollNumber2Int(tn: TrollNumber): Int = 0 // TODO return correct value
 
   /**Allows converting an [[scala.Int]] into a [[se.diversify.trollcount.TrollNumber]]
    * @param i the [[scala.Int]] to convert
    * @return the [[scala.Int]]'s value as a [[se.diversify.trollcount.TrollNumber]]
    */
-  implicit def int2TrollNumber(i: Int): TrollNumber = {
-    if (i > 16) throw new TrollsDontDoBigNumbersException
-
-    i match {
-      case 1 => One
-      case 2 => Two
-      case 3 => Three
-      case 4 => Many
-      case 16 => Lots
-      case _ => ComplexTrollNumber.int2ComplexTrollNumbers(i)
-    }
-  }
+  implicit def int2TrollNumber(i: Int): TrollNumber = One // TODO return a simple or complex TrollNumber or throw an exception if too big
 }
 
