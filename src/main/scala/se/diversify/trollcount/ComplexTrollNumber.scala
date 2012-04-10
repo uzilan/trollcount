@@ -15,5 +15,5 @@ object ComplexTrollNumber {
    * @param i the [[scala.Int]] to convert
    * @return the converted [[se.diversify.trollcount.ComplexTrollNumber]]
    */
-  implicit def int2ComplexTrollNumbers(i: Int): TrollNumber = One // TODO this should return something like Many-One or Many-Many-Three etc
+  implicit def int2ComplexTrollNumbers(i: Int): TrollNumber = One // TODO return something like Many-One or Many-Many-Three etc
 }
