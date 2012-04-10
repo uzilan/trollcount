@@ -1,13 +1,38 @@
 Troll Count
 ===========
 
-An simple scala program which simulates the [troll] numeral system according to the [Discworld].
+An simple scala library which simulates the [troll] numeral system according to the [Discworld]. It allows it's users 
+to create troll numbers and to add them to each other. Here's an example:
 
-This program exists in three branches:
+    scala> import se.diversify.trollcount.TrollNumber._
+    import se.diversify.trollcount.TrollNumber._
+
+    scala> val one = One
+    one: se.diversify.trollcount.TrollNumber = One
+
+    scala> val three = Three
+    three: se.diversify.trollcount.TrollNumber = Three
+
+    scala> three.value
+    res0: Int = 3
+
+    scala> val five = Many-One
+    five: se.diversify.trollcount.TrollNumber = Many-One
+
+    scala> val ten = five + five
+    ten: se.diversify.trollcount.TrollNumber = Many-Many-Two
+
+    scala> val fourteen = Many-Many-One + Many-one
+    fourteen: se.diversify.trollcount.TrollNumber = Many-Many-Many-Two
+
+    scala> fourteen.value
+    res1: Int = 14
+
+This library exists in three branches:
  
- * **master** - *The complete program.* Use this branch if you want to see my implementation.
+ * **master** - *The complete library.* Use this branch if you want to see my implementation.
  * **tests-only** - *Only contains tests and no implementation.* Use if this branch if you want to implement 
-the whole program logic on your own.
+the whole library logic on your own.
  * **tests-and-stubs** - *Contains stub implementations and failing tests.* Use this branch if you want to 
 bootstrap your implementation and add the missing bits.
 
