@@ -1,32 +1,33 @@
 Troll Count
 ===========
 
-A simple scala library which simulates the [troll] numeral system according to the [Discworld]. It allows it's users 
-to create troll numbers and to add them to each other. Here's an example:
+Troll Count is a simple scala library which simulates the [troll] numeral system[*] according to the [Discworld]. It allows it's users to create troll numbers and to add them to each other. Here's an example:
 
-    scala> import se.diversify.trollcount.TrollNumber._
-    import se.diversify.trollcount.TrollNumber._
+```scala
+scala> import se.diversify.trollcount.TrollNumber._
+import se.diversify.trollcount.TrollNumber._
 
-    scala> val one = One
-    one: se.diversify.trollcount.TrollNumber = One
+scala> val one = One
+one: se.diversify.trollcount.TrollNumber = One
 
-    scala> val three = Three
-    three: se.diversify.trollcount.TrollNumber = Three
+scala> val three = Three
+three: se.diversify.trollcount.TrollNumber = Three
 
-    scala> three.value
-    res0: Int = 3
+scala> three.value
+res0: Int = 3
 
-    scala> val five = Many-One
-    five: se.diversify.trollcount.TrollNumber = Many-One
+scala> val five = Many-One
+five: se.diversify.trollcount.TrollNumber = Many-One
 
-    scala> val ten = five + five
-    ten: se.diversify.trollcount.TrollNumber = Many-Many-Two
+scala> val ten = five + five
+ten: se.diversify.trollcount.TrollNumber = Many-Many-Two
 
-    scala> val fourteen = Many-Many-One + Many-one
-    fourteen: se.diversify.trollcount.TrollNumber = Many-Many-Many-Two
+scala> val fourteen = Many-Many-One + Many-One
+fourteen: se.diversify.trollcount.TrollNumber = Many-Many-Many-Two
 
-    scala> fourteen.value
-    res1: Int = 14
+scala> fourteen.value
+res1: Int = 14
+```
 
 This library exists in three branches:
  
@@ -49,6 +50,14 @@ or...
 or...
     
     git checkout tests-and-stubs
+[*] the [troll] numeral system goes like this:
+    
+```
+One, Two, Three, Many,
+Many-One, Many-Two, Many-Three, Many-Many,
+Many-Many-One, Many-Many-Two, Many-Many-Three, Many-Many-Many,
+Many-Many-Many-One, Many-Many-Many-Two, Many-Many-Many-Three, Lots
+```
 
 [troll]: http://en.wikipedia.org/wiki/Troll_(Discworld)
 [Discworld]: http://en.wikipedia.org/wiki/Discworld
