@@ -1,7 +1,7 @@
-Troll Count
+Trollcount
 ===========
 
-Troll Count is a simple scala library which simulates the [troll] numeral system[*] according to the [Discworld]. It allows it's users to create troll numbers and to add them to each other. Here's an example:
+Trollcount is a simple scala library which simulates the [troll] numeral system[*] according to the [Discworld]. It allows it's users to create troll numbers and to add them to each other. Here's an example:
 
 ```scala
 scala> import se.diversify.trollcount.TrollNumber._
