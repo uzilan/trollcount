@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Trollcount by uzilan</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Trollcount</h1>
+<p>Lets you count like a troll</p>
+        <p class="view"><a href="https://github.com/uzilan/trollcount">View the Project on GitHub <small>uzilan/trollcount</small></a></p>
+        <ul>
+          <li><a href="https://github.com/uzilan/trollcount/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/uzilan/trollcount/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/uzilan/trollcount">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>Trollcount is a simple scala library which simulates the <a href="http://en.wikipedia.org/wiki/Troll_(Discworld)">troll</a> numeral system[*] according to the <a href="http://en.wikipedia.org/wiki/Discworld">Discworld</a>. It allows it's users to create troll numbers and to add them to each other. Here's an example:</p>
+
+<div class="highlight">
+<pre><span class="n">scala</span><span class="o">&gt;</span> <span class="k">import</span> <span class="nn">se.diversify.trollcount.TrollNumber._</span>
+<span class="k">import</span> <span class="nn">se.diversify.trollcount.TrollNumber._</span>
+
+<span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">one</span> <span class="k">=</span> <span class="nc">One</span>
+<span class="n">one</span><span class="k">:</span> <span class="kt">se.diversify.trollcount.TrollNumber</span> <span class="o">=</span> <span class="nc">One</span>
+
+<span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">three</span> <span class="k">=</span> <span class="nc">Three</span>
+<span class="n">three</span><span class="k">:</span> <span class="kt">se.diversify.trollcount.TrollNumber</span> <span class="o">=</span> <span class="nc">Three</span>
+
+<span class="n">scala</span><span class="o">&gt;</span> <span class="n">three</span><span class="o">.</span><span class="n">value</span>
+<span class="n">res0</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">five</span> <span class="k">=</span> <span class="nc">Many</span><span class="o">-</span><span class="nc">One</span>
+<span class="n">five</span><span class="k">:</span> <span class="kt">se.diversify.trollcount.TrollNumber</span> <span class="o">=</span> <span class="nc">Many</span><span class="o">-</span><span class="nc">One</span>
+
+<span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">ten</span> <span class="k">=</span> <span class="n">five</span> <span class="o">+</span> <span class="n">five</span>
+<span class="n">ten</span><span class="k">:</span> <span class="kt">se.diversify.trollcount.TrollNumber</span> <span class="o">=</span> <span class="nc">Many</span><span class="o">-</span><span class="nc">Many</span><span class="o">-</span><span class="nc">Two</span>
+
+<span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">fourteen</span> <span class="k">=</span> <span class="nc">Many</span><span class="o">-</span><span class="nc">Many</span><span class="o">-</span><span class="nc">One</span> <span class="o">+</span> <span class="nc">Many</span><span class="o">-</span><span class="nc">One</span>
+<span class="n">fourteen</span><span class="k">:</span> <span class="kt">se.diversify.trollcount.TrollNumber</span> <span class="o">=</span> <span class="nc">Many</span><span class="o">-</span><span class="nc">Many</span><span class="o">-</span><span class="nc">Many</span><span class="o">-</span><span class="nc">Two</span>
+
+<span class="n">scala</span><span class="o">&gt;</span> <span class="n">fourteen</span><span class="o">.</span><span class="n">value</span>
+<span class="n">res1</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">14</span>
+</pre>
+</div>
+
+
+<p>This library exists in three branches:</p>
+
+<ul>
+<li>
+<strong>master</strong> - <em>The complete library.</em> Use this branch if you want to see my implementation.</li>
+<li>
+<strong>tests-only</strong> - <em>Only contains tests and no implementation.</em> Use if this branch if you want to implement 
+the whole library logic on your own.</li>
+<li>
+<strong>tests-and-stubs</strong> - <em>Contains stub implementations and failing tests.</em> Use this branch if you want to 
+bootstrap your implementation and add the missing bits.</li>
+</ul><p>To get the code, run:</p>
+
+<pre><code>git clone git://github.com/uzilan/trollcount.git
+</code></pre>
+
+<p>To switch to a different branch, run:</p>
+
+<pre><code>git checkout master
+</code></pre>
+
+<p>or...</p>
+
+<pre><code>git checkout tests-only
+</code></pre>
+
+<p>or...</p>
+
+<pre><code>git checkout tests-and-stubs
+</code></pre>
+
+<p>[*] the <a href="http://en.wikipedia.org/wiki/Troll_(Discworld)">troll</a> numeral system goes like this:</p>
+
+<pre><code>One, Two, Three, Many,
+Many-One, Many-Two, Many-Three, Many-Many,
+Many-Many-One, Many-Many-Two, Many-Many-Three, Many-Many-Many,
+Many-Many-Many-One, Many-Many-Many-Two, Many-Many-Many-Three, Lots
+</code></pre>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/uzilan">uzilan</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
