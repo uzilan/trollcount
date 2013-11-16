@@ -50,6 +50,9 @@ or...
 or...
     
     git checkout tests-and-stubs
+    
+Want to read more? Why not read the [blog post].
+
 [*] the [troll] numeral system goes like this:
     
 ```
@@ -61,3 +64,4 @@ Many-Many-Many-One, Many-Many-Many-Two, Many-Many-Many-Three, Lots
 
 [troll]: http://en.wikipedia.org/wiki/Troll_(Discworld)
 [Discworld]: http://en.wikipedia.org/wiki/Discworld
+[blog post]: http://codebyexample.info/2012/04/24/trollcount-count-like-a-troll/
