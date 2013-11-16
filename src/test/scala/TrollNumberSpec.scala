@@ -1,7 +1,11 @@
 import org.specs2.mutable.Specification
+import org.junit.runner.RunWith
+import org.specs2.runner.JUnitRunner
 import se.diversify.trollcount.TrollNumber._
 import se.diversify.trollcount.TrollsDontDoBigNumbersException
+import scala.language.implicitConversions
 
+@RunWith(classOf[JUnitRunner])
 class TrollNumberSpec extends Specification {
 
   "TrollNumber" should {
